@@ -27,7 +27,7 @@ var sep = /\s*,\s*/;
 var animalList = animals.split(sep,4);
 console.log("Primer 1: split ");
 console.dir(animals);
-console.log(animalList); //  ["dog" "cat" "elephant" "wolf"]
+console.log(animalList.toString()); //  ["dog" "cat" "elephant" "wolf"]
 
 
 
@@ -49,7 +49,7 @@ for (var i =0; i < addAnimals.length; i++)
 }
 console.log("Primer 2: push ");
 console.log(addAnimals);
-console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
+console.log(animalList.toString()); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 
 
 
@@ -78,7 +78,7 @@ console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
  */
 animalList.sort();
 console.log("Primer 3: sort ");
-console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
+console.log(animalList.toString()); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 
 
 
@@ -107,7 +107,7 @@ console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 
 animalList.reverse();
 console.log("Primer 4: reverse ");
-console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
+console.log(animalList.toString()); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 
 
 
@@ -124,7 +124,7 @@ console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 delAnimal =animalList.pop();
 console.log("Primer 5: pop ");
 console.log(delAnimal);
-console.log(animalList); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
+console.log(animalList.toString()); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
 
 
 
@@ -165,5 +165,5 @@ console.dir(animalList.join()); //["dog", "cat", "elephant", "wolf", "fox", "rab
 //animalList.join();
 console.log("Primer 7: splice ");
 animalList.splice(0,animalList.length);
-console.dir(animalList);
+console.dir(animalList.toString());
 //console.dir(animalList.join()); //["dog", "cat", "elephant", "wolf", "fox", "rabbit"]
