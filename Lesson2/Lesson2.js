@@ -10,7 +10,7 @@ myObject = {
     2: "c",
     length: 3
 }
-console.log("******* par.1 (push, pop, slice, join, reverse) ********");
+console.log("******* par.1 Create {push, pop, slice, join, reverse} ********");
 //Primer 1 (Pop)
 var myPop = function () {
     // if (arr == undefined){ arr = this; console.log("Izmenen!!!"); console.log(arr.toString()); };
