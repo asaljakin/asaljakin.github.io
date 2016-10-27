@@ -42,15 +42,12 @@ console.log(rez.toString());
 console.log(testArr.toString());
 
 //Primer 2 (Push)
-var myPush = function (arr) {
+var myPush = function () {
     if(!this.length){this.length = 0;}
     var l = this.length;
-    if (arr) {
-        for (i=0; i<arguments.length; i++,l++ ) {
-            this[l] = arguments[i];
-        }
+    for (i=0; i<arguments.length; i++,l++ ) {
+        this[l] = arguments[i];
     }
-
     return this.length = l;
 }
 console.log("******* 1_b: Push *******");
