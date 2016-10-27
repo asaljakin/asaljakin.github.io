@@ -5,55 +5,65 @@
 console.log('******* P1_1 Factorial *******');
 console.log('factorial(10):');
 console.log(factorial(10));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('factorial',[10])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('factorial_cycle(10):');
 console.log(factorial_cycle(10));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('factorial_cycle',[10])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 console.log();
 
 console.log('******* P1_2 Power *******');
 console.log('pow(2,4):');
 console.log(pow(2,4));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('pow',[2,4])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('pow_cycle(2,4):');
 console.log(pow_cycle(2,4));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('pow_cycle',[2,4])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 console.log();
 
 console.log('******* P1_3 Sum of numbers *******');
 console.log('sumNum(1549):');
 console.log(sumNum(1549));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumNum',[1549])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('sumNum_cycle(1549):');
 console.log(sumNum_cycle(1549));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumNum_cycle',[1549])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 console.log();
 
 console.log('******* P1_4 Arithmetical progression *******');
 console.log('sumTo_rec(10):');
 console.log(sumTo_rec(10));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumTo_rec',[10])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('sumTo_cycle(10):');
 console.log(sumTo_cycle(10));
 //console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumTo_cycle',[10])+' ms');
+//console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('arithProg(100):');
 console.log(arithProg(10));
 console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('arithProg',[10])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 console.log();
 
 console.log('******* P1_5 Fibonacci numbers *******');
 console.log('fib_rec(7):');
 console.log(fib_rec(7));
 //console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('fib_rec',[3])+' ms');
+console.log(inputElapsedTime('factorial',[10],10000));
 
 console.log('fib_cycle(7):');
 console.log(fib_cycle(7));
-//console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('fib_cycle',[7])+' ms');
+//console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('fib_cycle',[3])+' ms');
+//console.log(inputElapsedTime('factorial',[10],10000));
 
 
 
@@ -150,11 +160,12 @@ function fib_cycle(num) {
    return rez;
 }
 
-function inputElapsedTime(name,par){
+function inputElapsedTime(name,par,cyc){
     var start = new Date;
-    for(i=0; i<1000; i++){
+    for(i=0; i<cyc; i++){
         this[name].apply(null,par);
     }
     var end = new Date;
-    return end - start;
+    //return end - start;
+    return 'Time elapsed for '+name+' '+cyc+' cycles:'+(end - start)+' ms';
 }
