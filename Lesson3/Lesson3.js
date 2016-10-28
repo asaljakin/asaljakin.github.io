@@ -132,20 +132,6 @@ function sumTo_cycle(num) {
 }
 
 //***** sumTo_Rec
-function sumTo_rec2(num) {
-    var self = this;
-    var k = num;
-
-  //  var call_i = num.call_i;
-   // if (call_i >= max_call_i){
-     //   setTimeout(function(){sumTo_rec({k:k+1, call_i:call_i+1})}, 0);
-   // else
-
-        if (num > 0) {setTimeout(function(){num + sumTo_rec2(--num)},0);
-        }else return num;
-
-}
-
 function sumTo_rec(num) {
     if (num > 0) {return num + sumTo_rec(--num);
     }else return num;
