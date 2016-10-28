@@ -48,7 +48,7 @@ console.log(sumTo_rec(pap));
 console.log(inputElapsedTime('sumTo_rec',[pap],kolCyclov));
 
 console.log('sumTo_cycle('+pap+'):');
-console.log(sumTo_cycle(100000));
+console.log(sumTo_cycle(pap));
 console.log(inputElapsedTime('sumTo_cycle',[pap],kolCyclov));
 
 console.log('arithProg('+pap+'):');
