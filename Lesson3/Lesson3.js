@@ -2,68 +2,69 @@
  * Created by andrew on 27.10.16.
  */
 
-console.log('******* P1_1 Factorial *******');
-console.log('factorial(10):');
-console.log(factorial(10));
-console.log(inputElapsedTime('factorial',[10],10000));
 
-console.log('factorial_cycle(10):');
-console.log(factorial_cycle(10));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('factorial_cycle',[10])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
-console.log();
+//by stack overflow protection
+var max_call_i = 300;
+
+var kolCyclov = 10000;
+
+console.log('******* P1_1 Factorial *******');
+var pf = 15;
+console.log('factorial('+pf+'):');
+console.log(factorial(pf));
+console.log(inputElapsedTime('factorial',[pf],kolCyclov));
+
+console.log('factorial_cycle('+pf+'):');
+console.log(factorial_cycle(pf));
+console.log(inputElapsedTime('factorial_cycle',[pf],kolCyclov));
+console.log('');
 
 console.log('******* P1_2 Power *******');
-console.log('pow(2,4):');
-console.log(pow(2,4));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('pow',[2,4])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
+var pp1 = 2, pp2 = 4;
+console.log('pow('+pp1+','+pp2+'):');
+console.log(pow(pp1,pp2));
+console.log(inputElapsedTime('pow',[pp1,pp2],kolCyclov));
 
-console.log('pow_cycle(2,4):');
-console.log(pow_cycle(2,4));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('pow_cycle',[2,4])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
-console.log();
+console.log('pow_cycle('+pp1+','+pp2+'):');
+console.log(pow_cycle(pp1,pp2));
+console.log(inputElapsedTime('pow_cycle',[pp1,pp2],kolCyclov));
+console.log('');
 
 console.log('******* P1_3 Sum of numbers *******');
-console.log('sumNum(1549):');
-console.log(sumNum(1549));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumNum',[1549])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
+var psn = 1549;
+console.log('sumNum('+psn+'):');
+console.log(sumNum(psn));
+console.log(inputElapsedTime('sumNum',[psn],kolCyclov));
 
-console.log('sumNum_cycle(1549):');
-console.log(sumNum_cycle(1549));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumNum_cycle',[1549])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
-console.log();
+console.log('sumNum_cycle('+psn+'):');
+console.log(sumNum_cycle(psn));
+console.log(inputElapsedTime('sumNum_cycle',[psn],kolCyclov));
+console.log('');
 
 console.log('******* P1_4 Arithmetical progression *******');
-console.log('sumTo_rec(10):');
-console.log(sumTo_rec(10));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumTo_rec',[10])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
+var pap = 20;
+console.log('sumTo_rec('+pap+'):');
+console.log(sumTo_rec(pap));
+console.log(inputElapsedTime('sumTo_rec',[pap],kolCyclov));
 
-console.log('sumTo_cycle(10):');
-console.log(sumTo_cycle(10));
-//console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('sumTo_cycle',[10])+' ms');
-//console.log(inputElapsedTime('factorial',[10],10000));
+console.log('sumTo_cycle('+pap+'):');
+console.log(sumTo_cycle(100000));
+console.log(inputElapsedTime('sumTo_cycle',[pap],kolCyclov));
 
-console.log('arithProg(100):');
-console.log(arithProg(10));
-console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('arithProg',[10])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
-console.log();
+console.log('arithProg('+pap+'):');
+console.log(arithProg(pap));
+console.log(inputElapsedTime('arithProg',[pap],kolCyclov));
+console.log('');
 
 console.log('******* P1_5 Fibonacci numbers *******');
-console.log('fib_rec(7):');
-console.log(fib_rec(7));
-//console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('fib_rec',[3])+' ms');
-console.log(inputElapsedTime('factorial',[10],10000));
+var pfn = 7;
+console.log('fib_rec('+pfn+'):');
+console.log(fib_rec(pfn));
+console.log(inputElapsedTime('fib_rec',[pfn],kolCyclov));
 
-console.log('fib_cycle(7):');
-console.log(fib_cycle(7));
-//console.log('Time elapsed for 10000 cycles:'+inputElapsedTime('fib_cycle',[3])+' ms');
-//console.log(inputElapsedTime('factorial',[10],10000));
+console.log('fib_cycle('+pfn+'):');
+console.log(fib_cycle(pfn));
+console.log(inputElapsedTime('fib_cycle',[pfn],kolCyclov));
 
 
 
@@ -121,6 +122,7 @@ function sumNum_cycle(num) {
 
 //***** sumTo_Cycle
 function sumTo_cycle(num) {
+
     var rez = 0;
     for (i=1; num >= i; i++) {
         rez += i;
@@ -130,6 +132,20 @@ function sumTo_cycle(num) {
 }
 
 //***** sumTo_Rec
+function sumTo_rec2(num) {
+    var self = this;
+    var k = num;
+
+  //  var call_i = num.call_i;
+   // if (call_i >= max_call_i){
+     //   setTimeout(function(){sumTo_rec({k:k+1, call_i:call_i+1})}, 0);
+   // else
+
+        if (num > 0) {setTimeout(function(){num + sumTo_rec2(--num)},0);
+        }else return num;
+
+}
+
 function sumTo_rec(num) {
     if (num > 0) {return num + sumTo_rec(--num);
     }else return num;
@@ -137,9 +153,9 @@ function sumTo_rec(num) {
 
 //***** Arithmetical progression
 function arithProg(num,start,d) {
-    if(!start) start = 0;
+    if(!start) start = 1;
     if(!d) d = 1;
-    return (start + d*(num-1))/2*num;
+    return (2*start + d*(num-1))/2*num;
 }
 
 //***** Fibonacci numbers Recursion
@@ -162,7 +178,7 @@ function fib_cycle(num) {
 
 function inputElapsedTime(name,par,cyc){
     var start = new Date;
-    for(i=0; i<cyc; i++){
+    for(var i=0; i<cyc; i++){
         this[name].apply(null,par);
     }
     var end = new Date;
