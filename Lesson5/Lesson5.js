@@ -5,14 +5,16 @@
 var heightRocks = [2,1,5,0,3,4,7,2,3,1,0];
 
 function calculate(heightRocks){
-    var maxHead =heightRocks.shift(), maxTail = heightRocks.pop(), rez = 0;
     console.log("Height rocks: "+heightRocks);
+
+    var maxHead =heightRocks.shift(), maxTail = heightRocks.pop(), rez = 0;
+
     while (heightRocks.length >0) {
         var nextHead = (heightRocks.shift());
         var nextTail = (heightRocks.pop());
 
-        if (nextHead === undefined) { nextHead = maxHead};
-        if (nextTail === undefined) { nextTail = maxTail};
+        if (nextHead === undefined)  nextHead = maxHead;
+        if (nextTail === undefined)  nextTail = maxTail;
 
         if (nextHead>maxHead){
             maxHead = nextHead;
